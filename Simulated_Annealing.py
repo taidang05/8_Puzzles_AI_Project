@@ -14,11 +14,13 @@ def simulated_annealing(initial_state, goal_state, max_iterations=1000, initial_
     best_path = []
     current_path = []
     temp = initial_temp
+    nodes_expanded = 0
 
     for i in range(max_iterations):
+        nodes_expanded += 1
         # Kiểm tra đích
         if current_h == 0:
-            return current_path
+            return current_path, len(current_path), nodes_expanded
 
         actions = get_actions(current_state)
 
@@ -43,7 +45,7 @@ def simulated_annealing(initial_state, goal_state, max_iterations=1000, initial_
         temp *= cooling_rate
         if temp <= 1:  # Ngưỡng nhiệt độ tối thiểu
             break
-    return best_path
+    return best_path, len(best_path), nodes_expanded
 
 
 

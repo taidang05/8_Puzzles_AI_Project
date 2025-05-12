@@ -21,6 +21,7 @@ from Best_hill_climbing import steepest_ascent_hill_climbing
 from Simulated_Annealing import simulated_annealing
 from Beam_Search import beam_search
 from AndOr_search import and_or_search
+from backtracking_gui import show_backtracking_gui
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill, Font, Alignment
 from openpyxl.utils import get_column_letter
@@ -108,7 +109,7 @@ class PuzzleSolverVisualizer(tk.Frame):
         # Create a smaller OptionMenu with fixed width
         algorithm_menu = ttk.OptionMenu(algorithm_frame, self.algorithm, "BFS", 
             "BFS", "DFS", "UCS", "IDS", "Greedy", "A*", "ID_A*", "Best Hill Climbing", 
-            "Simulated Annealing", "Beam Search", "And-Or tree")
+            "Simulated Annealing", "Beam Search", "And-Or search", "Backtracking")
         algorithm_menu.grid(row=0, column=1, sticky="w")
         algorithm_menu.configure(width=20)  # Set fixed width for the menu
 
@@ -313,6 +314,13 @@ class PuzzleSolverVisualizer(tk.Frame):
             self.display_path(self.current_path, start_from_index=self.current_state_index)
 
     def start_solver(self):
+        if self.algorithm.get() == "Backtracking":
+            show_backtracking_gui()
+            return
+            
+        if self.is_solving:
+            return
+
         self.status_bar.config(text="Solving...")
         algorithm = self.algorithm.get()
         self.master.title(f"8-Puzzle Solver - Running {algorithm}")
@@ -357,7 +365,7 @@ class PuzzleSolverVisualizer(tk.Frame):
             path,cost,space = beam_search(self.current_state, GOAL_STATE)
         elif algorithm == "UCS":
             path,cost,space = ucs(self.current_state, GOAL_STATE)
-        elif algorithm == "And-Or tree":
+        elif algorithm == "And-Or search":
             path,cost,space = and_or_search(self.current_state, GOAL_STATE)
         elif algorithm == "IDS":
             path,cost,space = ids(self.current_state, GOAL_STATE)  
