@@ -9,17 +9,14 @@
       3.1.2. [Depth-First Search (DFS)](#312-depth-first-search-dfs)  
       3.1.3. [Uniform Cost Search (UCS)](#313-uniform-cost-search-ucs)  
       3.1.4. [Iterative Deepening Search (IDS)](#314-iterative-deepening-search-ids)  
-      3.1.5. [So sánh các thuật toán Uninformed Search](#315-so-sánh-các-thuật-toán-uninformed-search)  
    3.2. [Tìm kiếm có thông tin (Informed Search)](#32-tìm-kiếm-có-thông-tin-informed-search)  
       3.2.1. [Greedy Best-First Search](#321-greedy-best-first-search)  
       3.2.2. [A* Search](#322-a-search)  
       3.2.3. [Iterative Deepening A* (IDA*)](#323-iterative-deepening-a-ida)  
    3.3. [Tìm kiếm cục bộ (Local Search)](#33-tìm-kiếm-cục-bộ-local-search)  
-      3.3.1. [Simple Hill Climbing](#331-simple-hill-climbing)  
-      3.3.2. [Stochastic Hill Climbing](#332-stochastic-hill-climbing)  
-      3.3.3. [Simulated Annealing](#333-simulated-annealing)  
-      3.3.4. [Genetic Search](#334-genetic-search)  
-      3.3.5. [Beam Search](#335-beam-search)  
+      3.3.1. [Best Hill Climbing](#331-best-hill-climbing)   
+      3.3.2. [Simulated Annealing](#332-simulated-annealing)  
+      3.3.3. [Beam Search](#333-beam-search)  
    3.4. [Tìm kiếm trong môi trường phức tạp (Complex Environment Search)](#34-tìm-kiếm-trong-môi-trường-phức-tạp-complex-environment-search)  
       3.4.1. [Partially Observable Search](#341-partially-observable-search)  
       3.4.2. [No Observation Search](#342-no-observation-search)  
@@ -423,9 +420,9 @@ Với giao diện trực quan và mã nguồn dễ hiểu, dự án trở thành
 ## 5. Tác giả
 
 - **Giảng viên hướng dẫn**: TS. Phan Thị Huyền Trang
-- **Sinh viên thực hiện**: Trương Nhất Nguyên  
-- **Mã số sinh viên**: 23110273  
+- **Sinh viên thực hiện**: Đặng Ngọc Tài
+- **Mã số sinh viên**: 23110304
 - **Mã lớp học**: ARIN330585_04 
 ---
 
-> © 2025 – Trương Nhất Nguyên – HCMUTE
+> © 2025 – Đặng Ngọc Tài – HCMUTE
