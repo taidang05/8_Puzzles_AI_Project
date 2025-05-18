@@ -1,66 +1,76 @@
-<div align="center">
-# ﻿8-Puzzle Solver with AI Algorithms
+# 8-Puzzle Solver with AI Algorithms 🧩
 
-<div align="center">
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Tkinter](https://img.shields.io/badge/Tkinter-GUI-blue?style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
+![Visitor Count](https://visitor-badge.laobi.icu/badge?page_id=tai-dang.8puzzle-solver)
 
-# **8-Puzzle Solver with AI Algorithms**
-## Đồ án cá nhân nhập môn Trí tuệ nhân tạo
+Đây là một dự án toàn diện triển khai các thuật toán AI để giải bài toán 8-Puzzle, tích hợp giao diện đồ họa (GUI) bằng Tkinter để minh họa quá trình giải. Dự án được thực hiện trong khuôn khổ môn Nhập môn Trí tuệ Nhân tạo tại HCMUTE.
 
-### Sinh viên thực hiện
-  **Họ và tên:** Đặng Ngọc Tài
+---
 
-  **MSSV:** 23110304
+## 🚀 Tổng quan dự án
 
-  **Giảng viên hướng dẫn:** TS. Phan Thị Huyền Trang
+**8-Puzzle Solver** là một dự án sử dụng Python để triển khai nhiều thuật toán AI nhằm giải bài toán 8-Puzzle – một bài toán kinh điển về sắp xếp ô số. Dự án bao gồm các nhóm thuật toán như tìm kiếm không thông tin, tìm kiếm có thông tin, tìm kiếm cục bộ, tìm kiếm trong môi trường phức tạp, tìm kiếm có điều kiện ràng buộc, và học tăng cường. Ngoài ra, dự án cung cấp một giao diện GUI bằng Tkinter để người dùng có thể theo dõi trực quan quá trình giải, là công cụ tuyệt vời để học tập và so sánh các kỹ thuật AI.
 
-</div>
-## Mục lục
-1. [Mục tiêu](#1-mục-tiêu)  
-2. [Nội dung dự án](#2-nội-dung-dự-án)  
-3. [Thuật toán](#3-thuật-toán)  
-   3.1. [Tìm kiếm không thông tin (Uninformed Search)](#31-tìm-kiếm-không-thông-tin-uninformed-search)  
-      3.1.1. [Breadth-First Search (BFS)](#311-breadth-first-search-bfs)  
-      3.1.2. [Depth-First Search (DFS)](#312-depth-first-search-dfs)  
-      3.1.3. [Uniform Cost Search (UCS)](#313-uniform-cost-search-ucs)  
-      3.1.4. [Iterative Deepening Search (IDS)](#314-iterative-deepening-search-ids)  
-   3.2. [Tìm kiếm có thông tin (Informed Search)](#32-tìm-kiếm-có-thông-tin-informed-search)  
-      3.2.1. [Greedy Best-First Search](#321-greedy-best-first-search)  
-      3.2.2. [A* Search](#322-a-search)  
-      3.2.3. [Iterative Deepening A* (IDA*)](#323-iterative-deepening-a-ida)  
-   3.3. [Tìm kiếm cục bộ (Local Search)](#33-tìm-kiếm-cục-bộ-local-search)  
-      3.3.1. [Best Hill Climbing](#331-best-hill-climbing)   
-      3.3.2. [Simulated Annealing](#332-simulated-annealing)  
-      3.3.3. [Beam Search](#333-beam-search)  
-   3.4. [Tìm kiếm trong môi trường phức tạp (Complex Environment Search)](#34-tìm-kiếm-trong-môi-trường-phức-tạp-complex-environment-search)  
-      3.4.1. [Partially Observable Search](#341-partially-observable-search)  
-      3.4.2. [No Observation Search](#342-no-observation-search)  
-      3.4.3. [AND-OR Search Algorithm](#343-and-or-search-algorithm)  
-   3.5. [Tìm kiếm có điều kiện ràng buộc (Constraint Satisfaction Problem)](#35-tìm-kiếm-có-điều-kiện-ràng-buộc-constraint-satisfaction-problem)  
-      3.5.1. [Tìm kiếm kiểm thử (Constraint Testing)](#351-tìm-kiếm-kiểm-thử-constraint-testing)  
-      3.5.2. [Backtracking CSP](#352-backtracking-csp)  
-      3.5.3. [Backtracking AC-3](#353-backtracking-ac-3)  
-   3.6. [Học tăng cường (Reinforcement Learning)](#36-học-tăng-cường-reinforcement-learning)  
-      3.6.1. [Q-Learning](#361-q-learning)  
-4. [Kết luận](#4-kết-luận)  
-5. [Tác giả](#5-tác-giả)  
+---
 
-## 1. Mục tiêu
+## 📑 Mục lục
 
-- **Triển khai các thuật toán AI**: Ứng dụng nhiều thuật toán tìm kiếm (uninformed, informed, local search, non-deterministic, constraint satisfaction, reinforcement learning, và complex environment search) để giải bài toán 8-puzzle, giúp người dùng hiểu rõ cách hoạt động và hiệu suất của từng thuật toán.
+1. [Tổng quan dự án](#-tổng-quan-dự-án)
+2. [Mục tiêu](#-mục-tiêu)
+3. [Nội dung dự án](#-nội-dung-dự-án)
+4. [Thuật toán](#-thuật-toán)
+   - [Tìm kiếm không thông tin (Uninformed Search)](#tìm-kiếm-không-thông-tin-uninformed-search)
+     - [Breadth-First Search (BFS)](#breadth-first-search-bfs)
+     - [Depth-First Search (DFS)](#depth-first-search-dfs)
+     - [Uniform Cost Search (UCS)](#uniform-cost-search-ucs)
+     - [Iterative Deepening Search (IDS)](#iterative-deepening-search-ids)
+     - [So sánh các thuật toán Uninformed Search](#so-sánh-các-thuật-toán-uninformed-search)
+   - [Tìm kiếm có thông tin (Informed Search)](#tìm-kiếm-có-thông-tin-informed-search)
+     - [Greedy Best-First Search](#greedy-best-first-search)
+     - [A* Search](#a-search)
+     - [Iterative Deepening A* (IDA*)](#iterative-deepening-a-ida)
+   - [Tìm kiếm cục bộ (Local Search)](#tìm-kiếm-cục-bộ-local-search)
+     - [Best Hill Climbing](#best-hill-climbing)
+     - [Simulated Annealing](#simulated-annealing)
+     - [Beam Search](#beam-search)
+   - [Tìm kiếm trong môi trường phức tạp (Complex Environment Search)](#tìm-kiếm-trong-môi-trường-phức-tạp-complex-environment-search)
+     - [Partially Observable Search](#partially-observable-search)
+     - [No Observation Search](#no-observation-search)
+     - [AND-OR Search Algorithm](#and-or-search-algorithm)
+   - [Tìm kiếm có điều kiện ràng buộc (Constraint Satisfaction Problem)](#tìm-kiếm-có-điều-kiện-ràng-buộc-constraint-satisfaction-problem)
+     - [Constraint Testing](#constraint-testing)
+     - [Backtracking CSP](#backtracking-csp)
+     - [Backtracking AC-3](#backtracking-ac-3)
+   - [Học tăng cường (Reinforcement Learning)](#học-tăng-cường-reinforcement-learning)
+     - [Q-Learning](#q-learning)
+5. [Cài đặt](#-cài-đặt)
+8. [Minh họa](#-minh-họa)
+9. [Kết luận](#-kết-luận)
+10. [Tác giả](#-tác-giả)
+
+---
+
+## 🎯 Mục tiêu
+
+- **Triển khai các thuật toán AI**: Ứng dụng nhiều thuật toán tìm kiếm (uninformed, informed, local search, complex environment, constraint satisfaction, reinforcement learning) để giải bài toán 8-puzzle, giúp người dùng hiểu rõ cách hoạt động và hiệu suất của từng thuật toán.
 - **So sánh hiệu suất**: Phân tích và so sánh hiệu quả của các thuật toán về thời gian chạy, bộ nhớ sử dụng, và tính tối ưu của đường đi để hiểu rõ ưu/nhược điểm của từng thuật toán.
 - **Trực quan hóa**: Cung cấp giao diện đồ họa (GUI) để người dùng có thể theo dõi quá trình giải bài toán một cách trực quan.
 
-## 2. Nội dung dự án
+---
+
+## 📝 Nội dung dự án
 
 Dự án **8-Puzzle Visualizer** triển khai bài toán 8-puzzle, một bài toán cổ điển trong Trí tuệ Nhân tạo, với mục tiêu sắp xếp các ô số từ trạng thái ban đầu về trạng thái mục tiêu thông qua việc di chuyển ô trống. Dự án tích hợp **bảy nhóm thuật toán** tìm kiếm, bao gồm:
 
 - **Tìm kiếm không thông tin (Uninformed Search)**: Các thuật toán dựa trên khám phá mù, không sử dụng hàm heuristic.
 - **Tìm kiếm có thông tin (Informed Search)**: Các thuật toán sử dụng heuristic để hướng dẫn tìm kiếm một cách hiệu quả hơn.
 - **Tìm kiếm cục bộ (Local Search)**: Các thuật toán cải thiện trạng thái dần dần dựa trên hàm đánh giá.
-- **Tìm kiếm không xác định (Non-deterministic Search)**: Các thuật toán xử lý các tình huống không xác định hoặc có nhiều điều kiện phức tạp.
+- **Tìm kiếm trong môi trường phức tạp (Complex Environment Search)**: Các thuật toán xử lý các tình huống không xác định hoặc quan sát không đầy đủ.
 - **Tìm kiếm có điều kiện ràng buộc (Constraint Satisfaction Problem)**: Các thuật toán giải bài toán bằng cách gán các giá trị thỏa mãn các ràng buộc.
 - **Học tăng cường (Reinforcement Learning)**: Các thuật toán học từ kinh nghiệm để tìm lời giải tối ưu.
-- **Tìm kiếm trong môi trường phức tạp (Complex Environment Search)**: Các thuật toán xử lý các tình huống không xác định hoặc quan sát không đầy đủ.
+- **Tìm kiếm không xác định (Non-deterministic Search)**: Các thuật toán xử lý các tình huống không xác định hoặc có nhiều điều kiện phức tạp.
 
 Mỗi nhóm được trình bày chi tiết với:
 - **Thành phần chính của bài toán**: Mô tả trạng thái, hành động, kiểm tra mục tiêu, và hàm heuristic (nếu có).
@@ -69,13 +79,15 @@ Mỗi nhóm được trình bày chi tiết với:
 - **So sánh hiệu suất**: Bảng so sánh ghi lại thời gian thực thi và số lần mở rộng (expansions) để so sánh (cùng trạng thái ban đầu và mục tiêu).
 - **Nhận xét**: Phân tích ưu điểm, nhược điểm và hiệu quả khi áp dụng vào bài toán 8-puzzle.
 
-## 3. Thuật toán
+---
+
+## 🛠️ Thuật toán
 
 Dự án triển khai một loạt thuật toán AI đa dạng, được phân loại thành bảy nhóm chính:
 
-### 3.1. Tìm kiếm không thông tin (Uninformed Search)
+### Tìm kiếm không thông tin (Uninformed Search)
 
-#### 3.1.1. Breadth-First Search (BFS)
+#### Breadth-First Search (BFS)
 - **Mô tả**: BFS (Tìm kiếm theo chiều rộng) khám phá tất cả các trạng thái theo từng cấp độ độ sâu, từ trạng thái ban đầu đến trạng thái mục tiêu, sử dụng hàng đợi (queue).
 - **Phân tích lý thuyết**:
   - **Tính tối ưu**: Đảm bảo tìm ra con đường ngắn nhất trong không gian tìm kiếm không có trọng số.
@@ -91,10 +103,10 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
   - **Bộ nhớ**: \( O(b^d) \).
 - **Hình ảnh minh họa**: ![GIF mô tả BFS](assets/gif_solve/BFS.gif)
 - **Hình ảnh bổ sung**: ![BFS](https://upload.wikimedia.org/wikipedia/commons/f/f5/BFS-Algorithm_Search_Way.gif)
-- **Liên kết**: [Wikipedia - Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)
+- **Liên kết**: [Wikipedia - Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first-search)
 - **Nhận xét**: BFS lý tưởng khi cần giải pháp tối ưu, nhưng tốn bộ nhớ và chậm với độ sâu lớn.
 
-#### 3.1.2. Depth-First Search (DFS)
+#### Depth-First Search (DFS)
 - **Mô tả**: DFS (Tìm kiếm theo chiều sâu) khám phá sâu nhất một nhánh trước khi quay lui, sử dụng ngăn xếp (stack) hoặc đệ quy.
 - **Phân tích lý thuyết**:
   - **Tính tối ưu**: Không đảm bảo đường đi ngắn nhất.
@@ -110,10 +122,10 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
   - **Bộ nhớ**: \( O(d) \).
 - **Hình ảnh minh họa**: ![GIF mô tả DFS](assets/gif_solve/DFS.gif)
 - **Hình ảnh bổ sung**: ![DFS](https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif)
-- **Liên kết**: [Wikipedia - Depth-first search](https://en.wikipedia.org/wiki/Depth-first_search)
+- **Liên kết**: [Wikipedia - Depth-first search](https://en.wikipedia.org/wiki/Depth-first-search)
 - **Nhận xét**: DFS phù hợp khi bộ nhớ hạn chế, nhưng không hiệu quả nếu cần đường đi tối ưu.
 
-#### 3.1.3. Uniform Cost Search (UCS)
+#### Uniform Cost Search (UCS)
 - **Mô tả**: UCS mở rộng trạng thái dựa trên chi phí thấp nhất từ trạng thái ban đầu, sử dụng hàng đợi ưu tiên.
 - **Phân tích lý thuyết**:
   - **Tính tối ưu**: Đảm bảo đường đi ngắn nhất trong không gian có trọng số.
@@ -131,7 +143,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Liên kết**: [GeeksforGeeks - Uniform Cost Search](https://www.geeksforgeeks.org/uniform-cost-search-ucs-in-ai/)
 - **Nhận xét**: UCS hiệu quả khi cần giải pháp tối ưu, nhưng không vượt trội so với BFS trong 8-puzzle do chi phí đồng nhất.
 
-#### 3.1.4. Iterative Deepening Search (IDS)
+#### Iterative Deepening Search (IDS)
 - **Mô tả**: IDS kết hợp BFS và DFS, thực hiện DFS với giới hạn độ sâu tăng dần.
 - **Phân tích lý thuyết**:
   - **Tính tối ưu**: Đảm bảo đường đi ngắn nhất trong không gian không có trọng số.
@@ -148,13 +160,13 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Liên kết**: [GeeksforGeeks - Iterative Deepening Search](https://www.geeksforgeeks.org/iterative-deepening-searchids-iterative-deepening-depth-first-searchiddfs/)
 - **Nhận xét**: IDS cân bằng giữa tính tối ưu và bộ nhớ, nhưng chậm hơn BFS.
 
-#### 3.1.5. So sánh các thuật toán Uninformed Search
+#### So sánh các thuật toán Uninformed Search
 - **Hình ảnh so sánh hiệu suất**: ![So sánh hiệu suất Uninformed Search](assets/UninformedSearchCMP.jpg)
 - **Nhận xét**: BFS và UCS đảm bảo tính tối ưu nhưng tốn bộ nhớ; DFS tiết kiệm bộ nhớ nhưng không tối ưu; IDS cân bằng nhưng chậm hơn.
 
-### 3.2. Tìm kiếm có thông tin (Informed Search)
+### Tìm kiếm có thông tin (Informed Search)
 
-#### 3.2.1. Greedy Best-First Search
+#### Greedy Best-First Search
 - **Mô tả**: Chọn trạng thái có giá trị heuristic thấp nhất để mở rộng, sử dụng hàng đợi ưu tiên.
 - **Phân tích lý thuyết**:
   - **Tính tối ưu**: Không đảm bảo đường đi ngắn nhất.
@@ -172,8 +184,9 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Hình ảnh minh họa**: ![GIF mô tả GBFS](assets/gif_solve/GBFS.gif)
 - **Hình ảnh bổ sung**: ![Greedy Best-First Search](https://media.geeksforgeeks.org/wp-content/uploads/20240919162457/Greedy-best-First-Search-in-AI.png)
 - **Liên kết**: [GeeksforGeeks - Greedy Best-First Search](https://www.geeksforgeeks.org/greedy-best-first-search-algorithm/)
+- **Nhận xét**: GBFS nhanh hơn uninformed search nhưng không tối ưu, hiệu quả phụ thuộc vào heuristic.
 
-#### 3.2.2. A* Search
+#### A* Search
 - **Mô tả**: Kết hợp chi phí đã đi \( g \) và heuristic \( h \), chọn trạng thái có \( f = g + h \) thấp nhất.
 - **Phân tích lý thuyết**:
   - **Tính tối ưu**: Đảm bảo đường đi ngắn nhất nếu heuristic admissible và consistent.
@@ -190,8 +203,9 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Hình ảnh minh họa**: ![GIF mô tả A*](assets/gif_solve/AStar.gif)
 - **Hình ảnh bổ sung**: ![A* Search](https://upload.wikimedia.org/wikipedia/commons/5/5d/Astar_progress_animation.gif)
 - **Liên kết**: [GeeksforGeeks - A* Search Algorithm](https://www.geeksforgeeks.org/a-search-algorithm/)
+- **Nhận xét**: A* là thuật toán hiệu quả nhất trong nhóm informed search cho 8-puzzle, nhưng tốn bộ nhớ.
 
-#### 3.2.3. Iterative Deepening A* (IDA*)
+#### Iterative Deepening A* (IDA*)
 - **Mô tả**: Kết hợp IDS và A*, sử dụng ngưỡng \( f = g + h \) tăng dần.
 - **Phân tích lý thuyết**:
   - **Tính tối ưu**: Đảm bảo nếu heuristic admissible và consistent.
@@ -205,10 +219,11 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
   - **Bộ nhớ**: \( O(d) \).
 - **Hình ảnh minh họa**: ![GIF mô tả IDA*](assets/gif_solve/IDAStar.gif)
 - **Liên kết**: [GeeksforGeeks - Iterative Deepening A*](https://www.geeksforgeeks.org/iterative-deepening-a-algorithm-ida-artificial-intelligence/)
+- **Nhận xét**: IDA* phù hợp khi cần tiết kiệm bộ nhớ, nhưng chậm hơn A*.
 
-### 3.3. Tìm kiếm cục bộ (Local Search)
+### Tìm kiếm cục bộ (Local Search)
 
-#### 3.3.1. Simple Hill Climbing
+#### Best Hill Climbing
 - **Mô tả**: Chọn trạng thái con có heuristic tốt hơn trạng thái hiện tại.
 - **Phân tích lý thuyết**:
   - **Tính tối ưu**: Không đảm bảo, dễ mắc kẹt tại cực trị cục bộ.
@@ -222,23 +237,9 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
   - **Bộ nhớ**: \( O(1) \).
 - **Hình ảnh minh họa**: ![GIF mô tả Hill Climbing](assets/gif_solve/HillClimbing.gif)
 - **Liên kết**: [GeeksforGeeks - Hill Climbing](https://www.geeksforgeeks.org/introduction-hill-climbing-artificial-intelligence/)
+- **Nhận xét**: Best Hill Climbing nhanh nhưng dễ bị kẹt tại cực trị cục bộ, không đảm bảo giải pháp tối ưu.
 
-#### 3.3.2. Stochastic Hill Climbing
-- **Mô tả**: Chọn trạng thái con ngẫu nhiên, ưu tiên trạng thái tốt hơn.
-- **Phân tích lý thuyết**:
-  - **Tính tối ưu**: Không đảm bảo, nhưng tránh cực trị cục bộ tốt hơn.
-  - **Hoạt động**: Chấp nhận trạng thái con ngẫu nhiên nếu tốt hơn.
-- **Ưu điểm**:
-  - Thoát cực trị cục bộ tốt hơn Simple Hill Climbing.
-- **Nhược điểm**:
-  - Không tối ưu, phụ thuộc vào ngẫu nhiên.
-- **Độ phức tạp**:
-  - **Thời gian**: Phụ thuộc vào số lần lặp.
-  - **Bộ nhớ**: \( O(1) \).
-- **Hình ảnh minh họa**: ![GIF mô tả Stochastic Hill Climbing](assets/gif_solve/StochasticHillClimbing.gif)
-- **Liên kết**: [Wikipedia - Stochastic Hill Climbing](https://en.wikipedia.org/wiki/Hill_climbing#Variants)
-
-#### 3.3.3. Simulated Annealing
+#### Simulated Annealing
 - **Mô tả**: Chấp nhận trạng thái con tệ hơn với xác suất giảm dần, mô phỏng làm nguội kim loại.
 - **Phân tích lý thuyết**:
   - **Tính tối ưu**: Có thể tối ưu nếu lịch làm nguội chậm.
@@ -252,24 +253,9 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
   - **Bộ nhớ**: \( O(1) \).
 - **Hình ảnh minh họa**: ![GIF mô tả Simulated Annealing](assets/gif_solve/SimulatedAnnealing.gif)
 - **Liên kết**: [Wikipedia - Simulated Annealing](https://en.wikipedia.org/wiki/Simulated_annealing)
+- **Nhận xét**: Simulated Annealing linh hoạt hơn Hill Climbing, nhưng hiệu quả phụ thuộc vào tham số.
 
-#### 3.3.4. Genetic Search
-- **Mô tả**: Mô phỏng tiến hóa sinh học, sử dụng quần thể giải pháp, lai ghép, và đột biến.
-- **Phân tích lý thuyết**:
-  - **Tính tối ưu**: Không đảm bảo, nhưng tìm giải pháp gần tối ưu.
-  - **Hoạt động**: Lựa chọn cá thể tốt, lai ghép, đột biến, thay thế quần thể.
-- **Ưu điểm**:
-  - Khám phá không gian giải pháp lớn.
-  - Thoát cực trị cục bộ.
-- **Nhược điểm**:
-  - Tốn tài nguyên, phụ thuộc vào tham số.
-- **Độ phức tạp**:
-  - **Thời gian**: \( O(G.F.P) \), với \( G \) là số thế hệ, \( F \) là độ phức tạp fitness, \( P \) là kích thước quần thể.
-  - **Bộ nhớ**: \( O(P.L) \), với \( L \) là độ dài chromosome.
-- **Hình ảnh minh họa**: ![GIF mô tả Genetic Search](assets/gif_solve/GeneticSearch.gif)
-- **Liên kết**: [GeeksforGeeks - Genetic Algorithms](https://www.geeksforgeeks.org/genetic-algorithms/)
-
-#### 3.3.5. Beam Search
+#### Beam Search
 - **Mô tả**: Giới hạn số trạng thái giữ lại tại mỗi bước (beam width), chọn \( k \) trạng thái tốt nhất dựa trên heuristic.
 - **Phân tích lý thuyết**:
   - **Tính tối ưu**: Không đảm bảo, có thể bỏ qua đường đi tốt nhất.
@@ -288,26 +274,9 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Liên kết**: [GeeksforGeeks - Beam Search](https://www.geeksforgeeks.org/introduction-to-beam-search-algorithm/)
 - **Nhận xét**: Beam Search phù hợp khi cần cân bằng giữa tốc độ và chất lượng, nhưng không đảm bảo giải pháp tối ưu trong 8-puzzle.
 
-### 3.4. Tìm kiếm trong môi trường phức tạp (Complex Environment Search)
+### Tìm kiếm trong môi trường phức tạp (Complex Environment Search)
 
-#### 3.4.1. AND-OR Search Algorithm
-- **Mô tả**: Xử lý bài toán với nhánh AND/OR, xây dựng cây tìm kiếm thỏa mãn điều kiện phức tạp.
-- **Phân tích lý thuyết**:
-  - **Tính tối ưu**: Phụ thuộc vào triển khai, không luôn tối ưu.
-  - **Hoạt động**: Xây dựng cây với nút AND (tất cả điều kiện con đúng) và OR (một điều kiện con đúng).
-  - **Quản lý vòng lặp**: Kiểm tra trạng thái để tránh lặp.
-- **Ưu điểm**:
-  - Phù hợp với bài toán không xác định.
-- **Nhược điểm**:
-  - Phức tạp, tốn tài nguyên nếu không gian lớn.
-- **Độ phức tạp**:
-  - **Thời gian**: \( O(b^d) \).
-  - **Bộ nhớ**: \( O(b^d) \).
-- **Hình ảnh minh họa**: ![GIF mô tả AND-OR Search](assets/gif_solve/ANDORSearch.gif)
-- **Liên kết**: [Wikipedia - AND-OR Search](https://en.wikipedia.org/wiki/AND%E2%80%93OR_search_algorithm)
-- **Nhận xét**: AND-OR Search phù hợp cho các bài toán phức tạp, nhưng ít hiệu quả trong 8-puzzle do tính chất xác định của bài toán.
-
-#### 3.4.2. Partially Observable Search
+#### Partially Observable Search
 - **Mô tả**: Xử lý bài toán 8-puzzle trong môi trường chỉ quan sát được một phần (ví dụ: không biết trạng thái đầy đủ của bảng).
 - **Phân tích lý thuyết**:
   - **Tính tối ưu**: Không đảm bảo do thiếu thông tin.
@@ -326,7 +295,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Liên kết**: [Wikipedia - Partially Observable Markov Decision Process](https://en.wikipedia.org/wiki/Partially_observable_Markov_decision_process)
 - **Nhận xét**: Partially Observable Search phù hợp cho các bài toán thực tế hơn, nhưng không cần thiết trong 8-puzzle do môi trường xác định.
 
-#### 3.4.3. No Observation Search
+#### No Observation Search
 - **Mô tả**: Xử lý bài toán 8-puzzle mà không có quan sát trực tiếp, dựa trên chiến lược cố định hoặc hành động ngẫu nhiên.
 - **Phân tích lý thuyết**:
   - **Tính tối ưu**: Không đảm bảo, gần như không khả thi.
@@ -344,9 +313,26 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Liên kết**: [Wikipedia - Open-Loop Controller](https://en.wikipedia.org/wiki/Open-loop_controller)
 - **Nhận xét**: No Observation Search không thực tế cho 8-puzzle, chỉ mang tính lý thuyết.
 
-### 3.5. Tìm kiếm có điều kiện ràng buộc (Constraint Satisfaction Problem)
+#### AND-OR Search Algorithm
+- **Mô tả**: Xử lý bài toán với nhánh AND/OR, xây dựng cây tìm kiếm thỏa mãn điều kiện phức tạp.
+- **Phân tích lý thuyết**:
+  - **Tính tối ưu**: Phụ thuộc vào triển khai, không luôn tối ưu.
+  - **Hoạt động**: Xây dựng cây với nút AND (tất cả điều kiện con đúng) và OR (một điều kiện con đúng).
+  - **Quản lý vòng lặp**: Kiểm tra trạng thái để tránh lặp.
+- **Ưu điểm**:
+  - Phù hợp với bài toán không xác định.
+- **Nhược điểm**:
+  - Phức tạp, tốn tài nguyên nếu không gian lớn.
+- **Độ phức tạp**:
+  - **Thời gian**: \( O(b^d) \).
+  - **Bộ nhớ**: \( O(b^d) \).
+- **Hình ảnh minh họa**: ![GIF mô tả AND-OR Search](assets/gif_solve/ANDORSearch.gif)
+- **Liên kết**: [Wikipedia - AND-OR Search](https://en.wikipedia.org/wiki/AND%E2%80%93OR_search_algorithm)
+- **Nhận xét**: AND-OR Search phù hợp cho các bài toán phức tạp, nhưng ít hiệu quả trong 8-puzzle do tính chất xác định của bài toán.
 
-#### 3.5.1. Tìm kiếm kiểm thử (Constraint Testing)
+### Tìm kiếm có điều kiện ràng buộc (Constraint Satisfaction Problem)
+
+#### Constraint Testing
 - **Mô tả**: Kiểm tra các trạng thái của 8-puzzle để đảm bảo thỏa mãn các ràng buộc, như mỗi ô chỉ chứa một số duy nhất và ô trống có thể di chuyển hợp lệ.
 - **Phân tích lý thuyết**:
   - **Tính tối ưu**: Đảm bảo trạng thái hợp lệ, nhưng không đảm bảo đường đi tối ưu.
@@ -365,7 +351,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Liên kết**: [GeeksforGeeks - Constraint Satisfaction Problems](https://www.geeksforgeeks.org/constraint-satisfaction-problems-csp-in-artificial-intelligence/)
 - **Nhận xét**: Constraint Testing hữu ích để đảm bảo tính hợp lệ của trạng thái trong 8-puzzle, nhưng cần kết hợp với các thuật toán tìm kiếm khác để tìm lời giải.
 
-#### 3.5.2. Backtracking CSP
+#### Backtracking CSP
 - **Mô tả**: Sử dụng tìm kiếm quay lui để gán giá trị cho các ô trong 8-puzzle, đảm bảo thỏa mãn các ràng buộc (mỗi số xuất hiện một lần, di chuyển hợp lệ).
 - **Phân tích lý thuyết**:
   - **Tính tối ưu**: Không đảm bảo đường đi ngắn nhất, nhưng đảm bảo trạng thái hợp lệ.
@@ -384,7 +370,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Liên kết**: [GeeksforGeeks - Backtracking CSP](https://www.geeksforgeeks.org/constraint-satisfaction-problems-csp-in-artificial-intelligence/)
 - **Nhận xét**: Backtracking CSP phù hợp để kiểm tra tính khả thi, nhưng không hiệu quả trong việc tìm đường đi tối ưu cho 8-puzzle.
 
-#### 3.5.3. Backtracking AC-3
+#### Backtracking AC-3
 - **Mô tả**: Kết hợp Backtracking CSP với thuật toán AC-3 để duy trì tính nhất quán cung (arc consistency), giảm không gian tìm kiếm bằng cách loại bỏ các giá trị không hợp lệ trước khi quay lui.
 - **Phân tích lý thuyết**:
   - **Tính tối ưu**: Không đảm bảo đường đi ngắn nhất.
@@ -403,9 +389,9 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Liên kết**: [Wikipedia - AC-3 Algorithm](https://en.wikipedia.org/wiki/AC-3_algorithm)
 - **Nhận xét**: Backtracking AC-3 cải thiện hiệu suất so với Backtracking CSP, nhưng vẫn không lý tưởng cho 8-puzzle do không tối ưu đường đi.
 
-### 3.6. Học tăng cường (Reinforcement Learning)
+### Học tăng cường (Reinforcement Learning)
 
-#### 3.6.1. Q-Learning
+#### Q-Learning
 - **Mô tả**: Q-Learning là một thuật toán học tăng cường, học cách chọn hành động tối ưu thông qua thử-và-sai, dựa trên bảng Q lưu trữ giá trị hành động-trạng thái.
 - **Phân tích lý thuyết**:
   - **Tính tối ưu**: Có thể đạt giải pháp tối ưu nếu học đủ lâu và tham số được điều chỉnh tốt.
@@ -415,7 +401,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
   - Học từ kinh nghiệm, không cần mô hình môi trường.
   - Có thể thích nghi với các trạng thái mới.
 - **Nhược điểm**:
-  - Chậm để hội tụ trong không gian trạng thái lớn (8-puzzle có \( 9! = 362,880 \) trạng thái).
+  - Chậm để hội tụ trong không gian trạng thái lớn (8-puzzle có \( 9!/2 = 181,440 \) trạng thái khả thi).
   - Phụ thuộc vào tham số (alpha, gamma, epsilon).
 - **Độ phức tạp**:
   - **Thời gian**: Phụ thuộc vào số lần lặp và kích thước không gian trạng thái.
@@ -424,19 +410,40 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Liên kết**: [GeeksforGeeks - Q-Learning](https://www.geeksforgeeks.org/q-learning-in-python/)
 - **Nhận xét**: Q-Learning phù hợp cho các bài toán cần học dài hạn, nhưng không hiệu quả trong 8-puzzle do không gian trạng thái lớn và yêu cầu tính tối ưu nhanh.
 
-## 4. Kết luận
-Dự án đã triển khai một loạt các thuật toán mạnh mẽ để giải bài toán 8-Puzzle. Các thuật toán bao gồm nhóm tìm kiếm truyền thống, nhóm học tăng cường, cũng như các thuật toán xử lý bài toán trong môi trường phức tạp và môi trường có ràng buộc. Kết quả thu được cho thấy các thuật toán này không chỉ giải quyết được bài toán mà còn cho phép so sánh hiệu suất của chúng dựa trên các tiêu chí như thời gian chạy, số bước cần thực hiện và tổng số trạng thái duyệt. Điều này cung cấp cái nhìn sâu sắc về ưu, nhược điểm của từng thuật toán trong các điều kiện cụ thể.
+---
+## 🖥️ Cài đặt
 
-Một điểm sáng của dự án là việc phát triển giao diện trực quan hóa bằng Tkinter, cho phép người dùng quan sát trực tiếp cách các thuật toán giải bài toán. Visualizer hiển thị trạng thái ban đầu, các bước di chuyển trong quá trình thực hiện thuật toán, và trạng thái mục tiêu cuối cùng. Công cụ này không chỉ giúp minh họa rõ ràng cách hoạt động của các thuật toán mà còn mang lại trải nghiệm tương tác, cho phép người dùng nhập trạng thái ban đầu và trạng thái mục tiêu để kiểm tra.
+Để chạy dự án trên máy của bạn, hãy làm theo các bước sau:
 
-Với giao diện trực quan và mã nguồn dễ hiểu, dự án trở thành một công cụ hỗ trợ học tập mạnh mẽ. Nó giúp người học hiểu rõ cách các thuật toán hoạt động thông qua sự kết hợp giữa lý thuyết và thực hành. Đồng thời, dự án cũng cung cấp dữ liệu thực nghiệm quý giá để phân tích và kiểm tra hiệu quả của các thuật toán trong các môi trường khác nhau.
+1. **Clone repository**:
+   ```bash
+   git clone https://github.com/taidang05/8_Puzzles_AI_Project.git
+   cd 8_Puzzles_AI_Project
+2. **Cài đặt Python**:
+   Đảm bảo bạn đã cài đặt Python phiên bản 3.8 hoặc cao hơn. Nếu chưa có, hãy tải tại python.org.
+3. **Cài đặt các thư viện cần thiết**:
+   Dự án sử dụng các thư viện Python sau:
+   tkinter: Đã được tích hợp sẵn với Python (không cần cài thêm).
+   numpy: Dùng để xử lý ma trận trạng thái.
+4. **Chạy dự án**.
 
-## 5. Tác giả
-
-- **Giảng viên hướng dẫn**: TS. Phan Thị Huyền Trang
-- **Sinh viên thực hiện**: Đặng Ngọc Tài
-- **Mã số sinh viên**: 23110304
-- **Mã lớp học**: ARIN330585_04 
 ---
 
-> © 2025 – Đặng Ngọc Tài – HCMUTE
+## 📊 Kết luận
+
+Dự án **8-Puzzle Solver** đã triển khai thành công nhiều thuật toán AI để giải bài toán 8-Puzzle, bao gồm các nhóm tìm kiếm truyền thống (Uninformed Search, Informed Search, Local Search), tìm kiếm trong môi trường phức tạp, tìm kiếm có điều kiện ràng buộc, và học tăng cường (Reinforcement Learning). Kết quả cho thấy các thuật toán không chỉ giải quyết được bài toán mà còn cung cấp cơ sở để so sánh hiệu suất dựa trên các tiêu chí như thời gian chạy, bộ nhớ sử dụng, và số bước tối ưu. Điều này giúp làm rõ ưu điểm và hạn chế của từng thuật toán trong các tình huống khác nhau.
+
+Điểm nổi bật của dự án là giao diện trực quan được xây dựng bằng Tkinter, cho phép người dùng theo dõi quá trình giải bài toán một cách trực quan. Giao diện hiển thị trạng thái ban đầu, các bước di chuyển, và trạng thái mục tiêu, mang lại trải nghiệm học tập sinh động. Công cụ này không chỉ minh họa cách hoạt động của từng thuật toán mà còn hỗ trợ người dùng nhập trạng thái tùy chỉnh để thử nghiệm.
+
+Với mã nguồn rõ ràng và giao diện thân thiện, dự án là một tài liệu học tập hữu ích, kết hợp giữa lý thuyết và thực hành. Kết quả thực nghiệm từ dự án cũng cung cấp dữ liệu giá trị để phân tích hiệu quả của các thuật toán AI trong các ngữ cảnh khác nhau.
+
+---
+
+## 👤 Tác giả
+
+- **Giảng viên hướng dẫn**: TS. Phan Thị Huyền Trang  
+- **Sinh viên thực hiện**: Đặng Ngọc Tài  
+- **Mã số sinh viên**: 23110304  
+- **Mã lớp học**: ARIN330585_04  
+
+---
