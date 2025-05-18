@@ -39,3 +39,4 @@ def beam_search(initial_state, goal_state, beam_width=2):
             
     return [],0,nodes_expanded  # Không tìm thấy đường đi
 
+

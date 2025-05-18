@@ -7,20 +7,24 @@ import random
 import psutil
 import os
 
-# Có thông tin
+# Không có thông tin
 from uninformed_search.bfs import bfs
 from uninformed_search.dfs import dfs
 from uninformed_search.UCS import ucs
 from uninformed_search.IDS import ids
 
-# Không có thông tin
-from greedy import greedy
-from astar import a_star
-from idastar import ida_star
-from Best_hill_climbing import steepest_ascent_hill_climbing
-from Simulated_Annealing import simulated_annealing
-from Beam_Search import beam_search
-from AndOr_search import and_or_search
+# Có thông tin
+from Informed_search.greedy import greedy
+from Informed_search.astar import a_star
+from Informed_search.idastar import ida_star
+
+#local search
+from Local_search.Best_hill_climbing import steepest_ascent_hill_climbing
+from Local_search.Simulated_Annealing import simulated_annealing
+from Local_search.Beam_Search import beam_search
+from Local_search.Genetic import genetic_algorithm
+
+from Complex_enviroments.AndOr_search import and_or_search
 from backtracking_gui import show_backtracking_gui
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill, Font, Alignment
@@ -109,7 +113,7 @@ class PuzzleSolverVisualizer(tk.Frame):
         # Create a smaller OptionMenu with fixed width
         algorithm_menu = ttk.OptionMenu(algorithm_frame, self.algorithm, "BFS", 
             "BFS", "DFS", "UCS", "IDS", "Greedy", "A*", "ID_A*", "Best Hill Climbing", 
-            "Simulated Annealing", "Beam Search", "And-Or search", "Backtracking")
+            "Simulated Annealing", "Beam Search", "Genetic", "And-Or search", "Backtracking","Bactracking + AC3", "Q Learning")
         algorithm_menu.grid(row=0, column=1, sticky="w")
         algorithm_menu.configure(width=20)  # Set fixed width for the menu
 
@@ -369,6 +373,8 @@ class PuzzleSolverVisualizer(tk.Frame):
             path,cost,space = and_or_search(self.current_state, GOAL_STATE)
         elif algorithm == "IDS":
             path,cost,space = ids(self.current_state, GOAL_STATE)  
+        elif algorithm == "Genetic":
+            path,cost,space = genetic_algorithm(self.current_state,GOAL_STATE)
         # Calculate metrics
         end_time = time.time()
         final_memory = process.memory_info().rss

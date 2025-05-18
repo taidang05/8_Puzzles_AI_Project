@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import time
-from backtracking import backtracking
+from Constraint_enviroments.backtracking import backtracking
 from helper import apply_action, get_actions
 
 class BacktrackingGUI:

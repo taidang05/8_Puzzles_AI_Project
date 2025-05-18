@@ -5,6 +5,7 @@ def backtracking(initial_state, goal_state, callback=None):
     """
     Tìm đường đi từ initial_state đến goal_state bằng thuật toán Backtracking.
     Bắt đầu từ trạng thái trống và điền số theo thứ tự các ô kề nhau, từ nhỏ đến lớn.
+    Sử dụng heuristic để tăng tốc độ tìm kiếm.
     Trả về danh sách hành động dẫn đến đích, hoặc None nếu không tìm thấy.
     """
     # Khởi tạo trạng thái trống
@@ -34,23 +35,64 @@ def backtracking(initial_state, goal_state, callback=None):
         return neighbors
     
     def get_next_empty(state, last_i, last_j):
-        """Lấy ô trống tiếp theo kề với ô vừa điền"""
+        """Lấy ô trống tiếp theo dựa trên heuristic"""
         # Nếu chưa điền ô nào, bắt đầu từ ô (0,0)
         if last_i is None or last_j is None:
             return (0, 0) if state[0][0] == 0 else None
-            
-        # Tìm các ô kề với ô vừa điền
+        
+        # Tìm ô có ít lựa chọn nhất
+        min_choices = float('inf')
+        best_pos = None
+        
+        # Ưu tiên các ô kề với ô vừa điền
         neighbors = get_neighbors(last_i, last_j)
         for ni, nj in neighbors:
             if state[ni][nj] == 0:
-                return (ni, nj)
-                
-        # Nếu không tìm thấy ô kề trống, tìm ô trống đầu tiên
+                # Đếm số lựa chọn có thể cho ô này
+                choices = count_available_choices(state, ni, nj)
+                if choices < min_choices:
+                    min_choices = choices
+                    best_pos = (ni, nj)
+        
+        if best_pos:
+            return best_pos
+            
+        # Nếu không tìm thấy ô kề phù hợp, tìm ô trống có ít lựa chọn nhất
         for i in range(3):
             for j in range(3):
                 if state[i][j] == 0:
-                    return (i, j)
-        return None
+                    choices = count_available_choices(state, i, j)
+                    if choices < min_choices:
+                        min_choices = choices
+                        best_pos = (i, j)
+        
+        return best_pos
+    
+    def count_available_choices(state, i, j):
+        """Đếm số lựa chọn có thể cho ô (i,j) dựa trên các ràng buộc"""
+        used = set()
+        
+        # Kiểm tra các số đã được sử dụng trong toàn bộ bảng
+        for row in state:
+            for num in row:
+                if num != 0:
+                    used.add(num)
+        
+        # Trả về số lượng các số có thể điền
+        return 9 - len(used)
+    
+    def evaluate_state(state):
+        """Đánh giá trạng thái hiện tại dựa trên khoảng cách đến goal state"""
+        distance = 0
+        for i in range(3):
+            for j in range(3):
+                if state[i][j] != 0:
+                    # Tìm vị trí của số này trong goal state
+                    for gi in range(3):
+                        for gj in range(3):
+                            if goal_state[gi][gj] == state[i][j]:
+                                distance += abs(i - gi) + abs(j - gj)
+        return distance
     
     def backtrack(state, used_numbers, last_i=None, last_j=None):
         nonlocal nodes_expanded
@@ -74,8 +116,23 @@ def backtracking(initial_state, goal_state, callback=None):
             
         i, j = next_pos
         
-        # Tạo danh sách các số chưa sử dụng và sắp xếp từ nhỏ đến lớn
-        available_numbers = sorted(list(set(range(9)) - used_numbers))
+        # Tạo danh sách các số chưa sử dụng và sắp xếp theo heuristic
+        available_numbers = list(set(range(9)) - used_numbers)
+        
+        # Sắp xếp các số dựa trên heuristic
+        def get_number_score(num):
+            # Thử điền số và đánh giá
+            state[i][j] = num
+            score = evaluate_state(state)
+            state[i][j] = 0
+            return score
+        
+        available_numbers.sort(key=get_number_score)
+        
+        # Nếu đây là ô đầu tiên, ưu tiên điền số 1
+        # if last_i is None and last_j is None and 1 in available_numbers:
+        #     available_numbers.remove(1)
+        #     available_numbers.insert(0, 1)
         
         for num in available_numbers:
             # Thử điền số
