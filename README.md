@@ -22,11 +22,29 @@
 3. [Nội dung dự án](#-nội-dung-dự-án)
 4. [Thuật toán](#-thuật-toán)
    - [Tìm kiếm không thông tin (Uninformed Search)](#tìm-kiếm-không-thông-tin-uninformed-search)
+     - [Breadth-First Search (BFS)](#breadth-first-search-bfs)
+     - [Depth-First Search (DFS)](#depth-first-search-dfs)
+     - [Uniform Cost Search (UCS)](#uniform-cost-search-ucs)
+     - [Iterative Deepening Search (IDS)](#iterative-deepening-search-ids)
+     - [So sánh các thuật toán Uninformed Search](#so-sánh-các-thuật-toán-uninformed-search)
    - [Tìm kiếm có thông tin (Informed Search)](#tìm-kiếm-có-thông-tin-informed-search)
+     - [Greedy Best-First Search](#greedy-best-first-search)
+     - [A* Search](#a-search)
+     - [Iterative Deepening A* (IDA*)](#iterative-deepening-a-ida)
    - [Tìm kiếm cục bộ (Local Search)](#tìm-kiếm-cục-bộ-local-search)
+     - [Best Hill Climbing](#best-hill-climbing)
+     - [Simulated Annealing](#simulated-annealing)
+     - [Beam Search](#beam-search)
    - [Tìm kiếm trong môi trường phức tạp (Complex Environment Search)](#tìm-kiếm-trong-môi-trường-phức-tạp-complex-environment-search)
+     - [Partially Observable Search](#partially-observable-search)
+     - [No Observation Search](#no-observation-search)
+     - [AND-OR Search Algorithm](#and-or-search-algorithm)
    - [Tìm kiếm có điều kiện ràng buộc (Constraint Satisfaction Problem)](#tìm-kiếm-có-điều-kiện-ràng-buộc-constraint-satisfaction-problem)
+     - [Constraint Testing](#constraint-testing)
+     - [Backtracking CSP](#backtracking-csp)
+     - [Backtracking AC-3](#backtracking-ac-3)
    - [Học tăng cường (Reinforcement Learning)](#học-tăng-cường-reinforcement-learning)
+     - [Q-Learning](#q-learning)
 5. [Cài đặt](#-cài-đặt)
 6. [Hướng dẫn sử dụng](#-hướng-dẫn-sử-dụng)
 7. [Cấu trúc thư mục](#-cấu-trúc-thư-mục)
@@ -68,7 +86,7 @@ Mỗi nhóm được trình bày chi tiết với:
 
 ---
 
-##🛠️Thuật toán
+## 🛠️ Thuật toán
 
 Dự án triển khai một loạt thuật toán AI đa dạng, được phân loại thành bảy nhóm chính:
 
@@ -90,7 +108,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
   - **Bộ nhớ**: \( O(b^d) \).
 - **Hình ảnh minh họa**: ![GIF mô tả BFS](assets/gif_solve/BFS.gif)
 - **Hình ảnh bổ sung**: ![BFS](https://upload.wikimedia.org/wikipedia/commons/f/f5/BFS-Algorithm_Search_Way.gif)
-- **Liên kết**: [Wikipedia - Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)
+- **Liên kết**: [Wikipedia - Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first-search)
 - **Nhận xét**: BFS lý tưởng khi cần giải pháp tối ưu, nhưng tốn bộ nhớ và chậm với độ sâu lớn.
 
 #### Depth-First Search (DFS)
@@ -109,7 +127,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
   - **Bộ nhớ**: \( O(d) \).
 - **Hình ảnh minh họa**: ![GIF mô tả DFS](assets/gif_solve/DFS.gif)
 - **Hình ảnh bổ sung**: ![DFS](https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif)
-- **Liên kết**: [Wikipedia - Depth-first search](https://en.wikipedia.org/wiki/Depth-first_search)
+- **Liên kết**: [Wikipedia - Depth-first search](https://en.wikipedia.org/wiki/Depth-first-search)
 - **Nhận xét**: DFS phù hợp khi bộ nhớ hạn chế, nhưng không hiệu quả nếu cần đường đi tối ưu.
 
 #### Uniform Cost Search (UCS)
@@ -405,5 +423,5 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 
 1. **Clone repository**:
    ```bash
-   git clone https://github.com/[YourGitHubUsername]/8puzzle-solver.git
-   cd 8puzzle-solver
+   git clone https://github.com/taidang05/8_Puzzles_AI_Project.git
+   cd 8_Puzzles_AI_Project
