@@ -1,5 +1,19 @@
+<div align="center">
 # ﻿8-Puzzle Solver with AI Algorithms
 
+<div align="center">
+
+# **8-Puzzle Solver with AI Algorithms**
+## Đồ án cá nhân nhập môn Trí tuệ nhân tạo
+
+### Sinh viên thực hiện
+  **Họ và tên:** Đặng Ngọc Tài
+
+  **MSSV:** 23110304
+
+  **Giảng viên hướng dẫn:** TS. Phan Thị Huyền Trang
+
+</div>
 ## Mục lục
 1. [Mục tiêu](#1-mục-tiêu)  
 2. [Nội dung dự án](#2-nội-dung-dự-án)  
