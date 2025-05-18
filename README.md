@@ -46,14 +46,9 @@
    - [Học tăng cường (Reinforcement Learning)](#học-tăng-cường-reinforcement-learning)
      - [Q-Learning](#q-learning)
 5. [Cài đặt](#-cài-đặt)
-6. [Hướng dẫn sử dụng](#-hướng-dẫn-sử-dụng)
-7. [Cấu trúc thư mục](#-cấu-trúc-thư-mục)
 8. [Minh họa](#-minh-họa)
 9. [Kết luận](#-kết-luận)
 10. [Tác giả](#-tác-giả)
-11. [Đóng góp](#-đóng-góp)
-12. [Giấy phép](#-giấy-phép)
-13. [Liên hệ](#-liên-hệ)
 
 ---
 
@@ -416,7 +411,6 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Nhận xét**: Q-Learning phù hợp cho các bài toán cần học dài hạn, nhưng không hiệu quả trong 8-puzzle do không gian trạng thái lớn và yêu cầu tính tối ưu nhanh.
 
 ---
-
 ## 🖥️ Cài đặt
 
 Để chạy dự án trên máy của bạn, hãy làm theo các bước sau:
@@ -425,3 +419,31 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
    ```bash
    git clone https://github.com/taidang05/8_Puzzles_AI_Project.git
    cd 8_Puzzles_AI_Project
+2. **Cài đặt Python**:
+   Đảm bảo bạn đã cài đặt Python phiên bản 3.8 hoặc cao hơn. Nếu chưa có, hãy tải tại python.org.
+3. **Cài đặt các thư viện cần thiết**:
+   Dự án sử dụng các thư viện Python sau:
+   tkinter: Đã được tích hợp sẵn với Python (không cần cài thêm).
+   numpy: Dùng để xử lý ma trận trạng thái.
+4. **Chạy dự án**.
+
+---
+
+## 📊 Kết luận
+
+Dự án **8-Puzzle Solver** đã triển khai thành công nhiều thuật toán AI để giải bài toán 8-Puzzle, bao gồm các nhóm tìm kiếm truyền thống (Uninformed Search, Informed Search, Local Search), tìm kiếm trong môi trường phức tạp, tìm kiếm có điều kiện ràng buộc, và học tăng cường (Reinforcement Learning). Kết quả cho thấy các thuật toán không chỉ giải quyết được bài toán mà còn cung cấp cơ sở để so sánh hiệu suất dựa trên các tiêu chí như thời gian chạy, bộ nhớ sử dụng, và số bước tối ưu. Điều này giúp làm rõ ưu điểm và hạn chế của từng thuật toán trong các tình huống khác nhau.
+
+Điểm nổi bật của dự án là giao diện trực quan được xây dựng bằng Tkinter, cho phép người dùng theo dõi quá trình giải bài toán một cách trực quan. Giao diện hiển thị trạng thái ban đầu, các bước di chuyển, và trạng thái mục tiêu, mang lại trải nghiệm học tập sinh động. Công cụ này không chỉ minh họa cách hoạt động của từng thuật toán mà còn hỗ trợ người dùng nhập trạng thái tùy chỉnh để thử nghiệm.
+
+Với mã nguồn rõ ràng và giao diện thân thiện, dự án là một tài liệu học tập hữu ích, kết hợp giữa lý thuyết và thực hành. Kết quả thực nghiệm từ dự án cũng cung cấp dữ liệu giá trị để phân tích hiệu quả của các thuật toán AI trong các ngữ cảnh khác nhau.
+
+---
+
+## 👤 Tác giả
+
+- **Giảng viên hướng dẫn**: TS. Phan Thị Huyền Trang  
+- **Sinh viên thực hiện**: Đặng Ngọc Tài  
+- **Mã số sinh viên**: 23110304  
+- **Mã lớp học**: ARIN330585_04  
+
+---
