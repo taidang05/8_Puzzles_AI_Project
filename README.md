@@ -101,7 +101,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Độ phức tạp**:
   - **Thời gian**: \( O(b^d) \), với \( b \) là nhánh trung bình (2-4), \( d \) là độ sâu mục tiêu.
   - **Bộ nhớ**: \( O(b^d) \).
-- **Hình ảnh minh họa**: ![GIF mô tả BFS](assets/gif_solve/BFS.gif)
+- **Hình ảnh minh họa**: ![GIF mô tả BFS](assets/BFS.gif)
 - **Hình ảnh bổ sung**: ![BFS](https://upload.wikimedia.org/wikipedia/commons/f/f5/BFS-Algorithm_Search_Way.gif)
 - **Liên kết**: [Wikipedia - Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first-search)
 - **Nhận xét**: BFS lý tưởng khi cần giải pháp tối ưu, nhưng tốn bộ nhớ và chậm với độ sâu lớn.
@@ -120,7 +120,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Độ phức tạp**:
   - **Thời gian**: \( O(b^d) \).
   - **Bộ nhớ**: \( O(d) \).
-- **Hình ảnh minh họa**: ![GIF mô tả DFS](assets/gif_solve/DFS.gif)
+- **Hình ảnh minh họa**: ![GIF mô tả DFS](assets/DFS_GIF.gif)
 - **Hình ảnh bổ sung**: ![DFS](https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif)
 - **Liên kết**: [Wikipedia - Depth-first search](https://en.wikipedia.org/wiki/Depth-first-search)
 - **Nhận xét**: DFS phù hợp khi bộ nhớ hạn chế, nhưng không hiệu quả nếu cần đường đi tối ưu.
@@ -138,7 +138,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Độ phức tạp**:
   - **Thời gian**: \( O(b^{C*/ε}) \), với \( C* \) là chi phí tối ưu, \( ε = 1 \).
   - **Bộ nhớ**: \( O(b^{C*/ε}) \).
-- **Hình ảnh minh họa**: ![GIF mô tả UCS](assets/gif_solve/UCS.gif)
+- **Hình ảnh minh họa**: ![GIF mô tả UCS](assets/UCS_GIF.gif)
 - **Hình ảnh bổ sung**: ![UCS](https://cs.stanford.edu/people/eroberts/courses/soco/projects/2003-04/intelligent-search/dijkstra.gif)
 - **Liên kết**: [GeeksforGeeks - Uniform Cost Search](https://www.geeksforgeeks.org/uniform-cost-search-ucs-in-ai/)
 - **Nhận xét**: UCS hiệu quả khi cần giải pháp tối ưu, nhưng không vượt trội so với BFS trong 8-puzzle do chi phí đồng nhất.
@@ -156,7 +156,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Độ phức tạp**:
   - **Thời gian**: \( O(b^d) \), chậm hơn BFS do lặp.
   - **Bộ nhớ**: \( O(bd) \).
-- **Hình ảnh minh họa**: ![GIF mô tả IDS](assets/gif_solve/IDS.gif)
+- **Hình ảnh minh họa**: ![GIF mô tả IDS](assets/IDS_GIF.gif)
 - **Liên kết**: [GeeksforGeeks - Iterative Deepening Search](https://www.geeksforgeeks.org/iterative-deepening-searchids-iterative-deepening-depth-first-searchiddfs/)
 - **Nhận xét**: IDS cân bằng giữa tính tối ưu và bộ nhớ, nhưng chậm hơn BFS.
 
