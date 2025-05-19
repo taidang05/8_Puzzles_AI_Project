@@ -20,7 +20,7 @@
 1. [Tổng quan dự án](#-tổng-quan-dự-án)
 2. [Mục tiêu](#-mục-tiêu)
 3. [Nội dung dự án](#-nội-dung-dự-án)
-4. [Thuật toán](#-thuật-toán)
+4. [Thuật toán](#thuật-toán)
    - [Tìm kiếm không thông tin (Uninformed Search)](#tìm-kiếm-không-thông-tin-uninformed-search)
      - [Breadth-First Search (BFS)](#breadth-first-search-bfs)
      - [Depth-First Search (DFS)](#depth-first-search-dfs)
@@ -45,10 +45,9 @@
      - [Backtracking AC-3](#backtracking-ac-3)
    - [Học tăng cường (Reinforcement Learning)](#học-tăng-cường-reinforcement-learning)
      - [Q-Learning](#q-learning)
-5. [Cài đặt](#-cài-đặt)
-8. [Minh họa](#-minh-họa)
-9. [Kết luận](#-kết-luận)
-10. [Tác giả](#-tác-giả)
+5. [Cài đặt](#cài-đặt)
+6. [Kết luận](#-kết-luận)
+7. [Tác giả](#-tác-giả)
 
 ---
 
@@ -81,7 +80,7 @@ Mỗi nhóm được trình bày chi tiết với:
 
 ---
 
-## 🛠️ Thuật toán
+## Thuật toán
 
 Dự án triển khai một loạt thuật toán AI đa dạng, được phân loại thành bảy nhóm chính:
 
@@ -411,7 +410,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Nhận xét**: Q-Learning phù hợp cho các bài toán cần học dài hạn, nhưng không hiệu quả trong 8-puzzle do không gian trạng thái lớn và yêu cầu tính tối ưu nhanh.
 
 ---
-## 🖥️ Cài đặt
+## Cài đặt
 
 Để chạy dự án trên máy của bạn, hãy làm theo các bước sau:
 
