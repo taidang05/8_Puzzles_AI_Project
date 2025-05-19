@@ -180,7 +180,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Độ phức tạp**:
   - **Thời gian**: \( O(b^d) \).
   - **Bộ nhớ**: \( O(b^d) \).
-- **Hình ảnh minh họa**: ![GIF mô tả GBFS](assets/gif_solve/GBFS.gif)
+- **Hình ảnh minh họa**: ![GIF mô tả GBFS](assets/greedy_GIF.gif)
 - **Hình ảnh bổ sung**: ![Greedy Best-First Search](https://media.geeksforgeeks.org/wp-content/uploads/20240919162457/Greedy-best-First-Search-in-AI.png)
 - **Liên kết**: [GeeksforGeeks - Greedy Best-First Search](https://www.geeksforgeeks.org/greedy-best-first-search-algorithm/)
 - **Nhận xét**: GBFS nhanh hơn uninformed search nhưng không tối ưu, hiệu quả phụ thuộc vào heuristic.
@@ -199,7 +199,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Độ phức tạp**:
   - **Thời gian**: \( O(b^d) \), nhanh hơn BFS.
   - **Bộ nhớ**: \( O(b^d) \).
-- **Hình ảnh minh họa**: ![GIF mô tả A*](assets/gif_solve/AStar.gif)
+- **Hình ảnh minh họa**: ![GIF mô tả A*](assets/aStar_GIF.gif)
 - **Hình ảnh bổ sung**: ![A* Search](https://upload.wikimedia.org/wikipedia/commons/5/5d/Astar_progress_animation.gif)
 - **Liên kết**: [GeeksforGeeks - A* Search Algorithm](https://www.geeksforgeeks.org/a-search-algorithm/)
 - **Nhận xét**: A* là thuật toán hiệu quả nhất trong nhóm informed search cho 8-puzzle, nhưng tốn bộ nhớ.
@@ -216,7 +216,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Độ phức tạp**:
   - **Thời gian**: \( O(b^d) \).
   - **Bộ nhớ**: \( O(d) \).
-- **Hình ảnh minh họa**: ![GIF mô tả IDA*](assets/gif_solve/IDAStar.gif)
+- **Hình ảnh minh họa**: ![GIF mô tả IDA*](assets/ID_AStar_GIF.gif)
 - **Liên kết**: [GeeksforGeeks - Iterative Deepening A*](https://www.geeksforgeeks.org/iterative-deepening-a-algorithm-ida-artificial-intelligence/)
 - **Nhận xét**: IDA* phù hợp khi cần tiết kiệm bộ nhớ, nhưng chậm hơn A*.
 
@@ -234,7 +234,6 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Độ phức tạp**:
   - **Thời gian**: Phụ thuộc vào số lần lặp.
   - **Bộ nhớ**: \( O(1) \).
-- **Hình ảnh minh họa**: ![GIF mô tả Hill Climbing](assets/gif_solve/HillClimbing.gif)
 - **Liên kết**: [GeeksforGeeks - Hill Climbing](https://www.geeksforgeeks.org/introduction-hill-climbing-artificial-intelligence/)
 - **Nhận xét**: Best Hill Climbing nhanh nhưng dễ bị kẹt tại cực trị cục bộ, không đảm bảo giải pháp tối ưu.
 
@@ -250,7 +249,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Độ phức tạp**:
   - **Thời gian**: Phụ thuộc vào số lần lặp.
   - **Bộ nhớ**: \( O(1) \).
-- **Hình ảnh minh họa**: ![GIF mô tả Simulated Annealing](assets/gif_solve/SimulatedAnnealing.gif)
+- **Hình ảnh minh họa**: ![GIF mô tả Simulated Annealing](assets/simulated_GIF.gif)
 - **Liên kết**: [Wikipedia - Simulated Annealing](https://en.wikipedia.org/wiki/Simulated_annealing)
 - **Nhận xét**: Simulated Annealing linh hoạt hơn Hill Climbing, nhưng hiệu quả phụ thuộc vào tham số.
 
@@ -268,7 +267,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Độ phức tạp**:
   - **Thời gian**: \( O(kbd) \), với \( b \) là nhánh, \( d \) là độ sâu.
   - **Bộ nhớ**: \( O(k) \).
-- **Hình ảnh minh họa**: ![GIF mô tả Beam Search](assets/gif_solve/BeamSearch.gif)
+- **Hình ảnh minh họa**: ![GIF mô tả Beam Search](assets/beam_GIF.gif)
 - **Hình ảnh bổ sung**: ![Beam Search](https://upload.wikimedia.org/wikipedia/commons/2/23/Beam_search.gif)
 - **Liên kết**: [GeeksforGeeks - Beam Search](https://www.geeksforgeeks.org/introduction-to-beam-search-algorithm/)
 - **Nhận xét**: Beam Search phù hợp khi cần cân bằng giữa tốc độ và chất lượng, nhưng không đảm bảo giải pháp tối ưu trong 8-puzzle.
@@ -290,7 +289,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Độ phức tạp**:
   - **Thời gian**: \( O(b^d \cdot |B|) \), với \( B \) là không gian niềm tin.
   - **Bộ nhớ**: \( O(|B|) \).
-- **Hình ảnh minh họa**: ![GIF mô tả Partially Observable Search](assets/gif_solve/PartiallyObservableSearch.gif)
+- **Hình ảnh minh họa**: ![GIF mô tả Partially Observable Search](assets/PartiallyObservableSearch.gif)
 - **Liên kết**: [Wikipedia - Partially Observable Markov Decision Process](https://en.wikipedia.org/wiki/Partially_observable_Markov_decision_process)
 - **Nhận xét**: Partially Observable Search phù hợp cho các bài toán thực tế hơn, nhưng không cần thiết trong 8-puzzle do môi trường xác định.
 
@@ -308,7 +307,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Độ phức tạp**:
   - **Thời gian**: \( O(b^d) \), nhưng thường không tìm được giải pháp.
   - **Bộ nhớ**: \( O(1) \).
-- **Hình ảnh minh họa**: ![GIF mô tả No Observation Search](assets/gif_solve/NoObservationSearch.gif)
+- **Hình ảnh minh họa**: ![GIF mô tả No Observation Search](assets/NoObservationSearch.gif)
 - **Liên kết**: [Wikipedia - Open-Loop Controller](https://en.wikipedia.org/wiki/Open-loop_controller)
 - **Nhận xét**: No Observation Search không thực tế cho 8-puzzle, chỉ mang tính lý thuyết.
 
@@ -325,7 +324,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Độ phức tạp**:
   - **Thời gian**: \( O(b^d) \).
   - **Bộ nhớ**: \( O(b^d) \).
-- **Hình ảnh minh họa**: ![GIF mô tả AND-OR Search](assets/gif_solve/ANDORSearch.gif)
+- **Hình ảnh minh họa**: ![GIF mô tả AND-OR Search](assets/ANDORSearch.gif)
 - **Liên kết**: [Wikipedia - AND-OR Search](https://en.wikipedia.org/wiki/AND%E2%80%93OR_search_algorithm)
 - **Nhận xét**: AND-OR Search phù hợp cho các bài toán phức tạp, nhưng ít hiệu quả trong 8-puzzle do tính chất xác định của bài toán.
 
@@ -346,7 +345,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Độ phức tạp**:
   - **Thời gian**: \( O(1) \) cho mỗi kiểm tra trạng thái, nhưng tổng thời gian phụ thuộc vào số trạng thái.
   - **Bộ nhớ**: \( O(1) \) cho mỗi kiểm tra.
-- **Hình ảnh minh họa**: ![GIF mô tả Constraint Testing](assets/gif_solve/ConstraintTesting.gif)
+- **Hình ảnh minh họa**: ![GIF mô tả Constraint Testing](assets/ConstraintTesting.gif)
 - **Liên kết**: [GeeksforGeeks - Constraint Satisfaction Problems](https://www.geeksforgeeks.org/constraint-satisfaction-problems-csp-in-artificial-intelligence/)
 - **Nhận xét**: Constraint Testing hữu ích để đảm bảo tính hợp lệ của trạng thái trong 8-puzzle, nhưng cần kết hợp với các thuật toán tìm kiếm khác để tìm lời giải.
 
@@ -365,7 +364,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Độ phức tạp**:
   - **Thời gian**: \( O(b^d) \), với \( b \) là số giá trị có thể gán, \( d \) là số ô.
   - **Bộ nhớ**: \( O(d) \) cho ngăn xếp quay lui.
-- **Hình ảnh minh họa**: ![GIF mô tả Backtracking CSP](assets/gif_solve/BacktrackingCSP.gif)
+- **Hình ảnh minh họa**: ![GIF mô tả Backtracking CSP](assets/backtrack_GIF.gif)
 - **Liên kết**: [GeeksforGeeks - Backtracking CSP](https://www.geeksforgeeks.org/constraint-satisfaction-problems-csp-in-artificial-intelligence/)
 - **Nhận xét**: Backtracking CSP phù hợp để kiểm tra tính khả thi, nhưng không hiệu quả trong việc tìm đường đi tối ưu cho 8-puzzle.
 
@@ -384,7 +383,7 @@ Dự án triển khai một loạt thuật toán AI đa dạng, được phân l
 - **Độ phức tạp**:
   - **Thời gian**: \( O(b^d) \), nhưng nhanh hơn Backtracking CSP nhờ AC-3.
   - **Bộ nhớ**: \( O(d) \).
-- **Hình ảnh minh họa**: ![GIF mô tả Backtracking AC-3](assets/gif_solve/BacktrackingAC3.gif)
+- **Hình ảnh minh họa**: ![GIF mô tả Backtracking AC-3](assets/BacktrackingAC3.gif)
 - **Liên kết**: [Wikipedia - AC-3 Algorithm](https://en.wikipedia.org/wiki/AC-3_algorithm)
 - **Nhận xét**: Backtracking AC-3 cải thiện hiệu suất so với Backtracking CSP, nhưng vẫn không lý tưởng cho 8-puzzle do không tối ưu đường đi.
 
